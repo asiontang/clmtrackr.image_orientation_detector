@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<title>Face Tracker</title>
+		<meta charset="utf-8">
+	</head>
+
+	<body>
+		<!--<script src="clmtrackr.js"></script>-->
+		<script src="clmtrackr.min.js"></script>
+		<script src="clmtrackr.image_orientation_detector.js"></script>
+
+		<script>
+			getImageOrientationByFacefaceDetectionFromUrl('face.jpg', function(degrees) {
+				console.log('face.jpg需要再旋转:' + degrees + '度');
+				switch(degrees) {
+					case -1:
+						alert('face.jpg无法检测到待旋转角度:' + degrees);
+						break;
+					case 0:
+						alert('face.jpg检测到不需要再旋转了:' + degrees);
+						break;
+					default:
+						alert('face.jpg需要再旋转:' + degrees + '度');
+						break;
+				}
+			});
+		</script>
+	</body>
+
+</html>
